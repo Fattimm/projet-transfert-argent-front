@@ -1,0 +1,42 @@
+<div class="bg-white h-screen w-full max-w-md mx-auto flex flex-col">
+    <div class="bg-blue-600 p-2 flex justify-between items-center rounded-lg">
+        <span class="text-lg font-semibold">12:45</span>
+    </div>
+    
+    <div class="p-4 flex items-center border-b">
+        <div class="flex-1">
+            <h2 class="font-medium">Code</h2>
+            <input type="text" [(ngModel)]="password"
+                class="ml-2 outline-none flex-1 text-gray-600" maxlength="6" (input)="onPasswordInput($event)" />
+        </div>
+    </div>
+
+    <div class="p-4 pb-40">
+        <button (click)="verify()" class="bg-blue-500 text-white w-full p-2 rounded">
+            valider
+        </button>
+    </div>
+
+    <div class="bg-gray-100 p-2">
+        <div class="grid grid-cols-3 gap-2">
+            <ng-container *ngFor="let num of numbers">
+                <button *ngIf="num !== null" (click)="addNumber(num)"
+                    class="p-4 text-center text-lg font-medium hover:bg-gray-200 rounded">
+                    {{ num }}
+                    <div *ngIf="num === 2 || num === 3 || num === 4 || num === 5 || num === 6 || num === 8"
+                        class="text-xs text-gray-400">
+                        {{ getLetters(num) }}
+                    </div>
+                </button>
+            </ng-container>
+            <button class="p-4 text-center text-lg font-medium hover:bg-gray-200 rounded">*</button>
+            <button (click)="addNumber('0')" class="p-4 text-center text-lg font-medium hover:bg-gray-200 rounded">
+                0
+                <div class="text-xs text-gray-400">+</div>
+            </button>
+            <button (click)="deleteNumber()" class="p-4 text-center text-lg font-medium hover:bg-gray-200 rounded">
+                <i class="fas fa-backspace"></i>
+            </button>
+        </div>
+    </div>
+</div>

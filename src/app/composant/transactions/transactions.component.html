@@ -1,0 +1,20 @@
+<div class="p-4 bg-white shadow-md rounded-lg max-h-[500px] overflow-y-auto">
+    <h3 class="font-bold mb-4 text-xl text-gray-800">Dernières transactions</h3>
+    <ul>
+        <li 
+          class="flex justify-between items-center py-2 border-b hover:bg-gray-100 transition duration-200" 
+          *ngFor="let transaction of transactions"
+        >
+            <span class="flex flex-col">
+                <span class="flex items-center">
+                    <i [ngClass]="transaction.type === 'credit' ? 'fas fa-arrow-down text-green-600' : 'fas fa-arrow-up text-red-600'" class="mr-2"></i>
+                    {{ transaction.description }}
+                </span>
+                <span class="text-gray-500 text-xs">{{ transaction.date }}</span>
+            </span>
+            <span [ngClass]="transaction.type === 'credit' ? 'text-green-600' : 'text-red-600'" class="font-semibold">
+                {{ transaction.amount }}
+            </span>
+        </li>
+    </ul>
+</div>

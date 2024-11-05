@@ -1,0 +1,40 @@
+<div class="bg-white h-screen max-w-md mx-auto p-14 flex flex-col">
+    <div class="bg-blue-600 p-2 flex justify-between items-center rounded-lg">
+        <h1 class="font-medium  text-white m-auto">Bonjour Bienvenue à wave</h1>
+    </div>
+
+    <div class="p-4 flex items-center border-b">
+        <div class="flex items-center w-full">
+            <div class="flex-1">
+                <img src="https://via.placeholder.com/40" alt="logo" class="w-14 h-14 rounded-full">
+                <h2 class="text-gray-500 text-sm">Veuillez entrer votre numéro et votre mot de passe.</h2> 
+                <div class="flex items-center mt-1">
+                    <input type="text" [(ngModel)]="telephone" placeholder="77 000 00 00"
+                        class="ml-2 outline-none flex-1 text-gray-600" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password Section -->
+    <div class="p-4 flex items-center border-b">
+        <div class="flex-1">
+            <h2 class="font-medium">Mot de passe</h2>
+            <input type="password" [(ngModel)]="password" placeholder="****"
+                class="ml-2 outline-none flex-1 text-gray-600" maxlength="4" />
+        </div>
+    </div>
+
+    <!-- Messages -->
+    <div class="px-4 py-2 space-y-2">
+        <p *ngIf="errorMessage" class="text-red-500 text-sm">{{ errorMessage }}</p>
+        <p *ngIf="!errorMessage" class="text-red-500 text-sm h-5"></p> <!-- Espace réservé -->
+    </div>
+
+    <!-- Login Button -->
+    <div class="p-2">
+        <button (click)="login()" class="bg-blue-500 text-white w-full p-2 rounded">
+            Connexion
+        </button>
+    </div>
+</div>

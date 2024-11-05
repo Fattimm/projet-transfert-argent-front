@@ -1,0 +1,52 @@
+<div class="flex flex-col items-center bg-gray-100 m-auto space-y-4 rounded-lg shadow-md h-full w-[200px]">
+    <h1>Menu</h1>
+    
+    <div class="border border-transparent hover:bg-blue-500 transition-all duration-200 mb-2">
+        <button 
+          (click)="transfert()"  
+          class="flex flex-col items-center justify-center text-center w-48 rounded-lg h-20 transform transition-all duration-200"
+          aria-label="Transfert"
+        >
+            <div class="flex items-center justify-center text-xxl mt-2 text-gray-700">
+                <i class="fas fa-exchange-alt text-blue-500 text-xl hover:text-white transition-colors duration-200"></i>
+                <span class="ml-2 hover:text-white">Transfert</span>
+            </div>
+        </button>
+    </div>
+
+    <div class="border border-transparent hover:bg-blue-500 transition-all duration-200 mb-2">
+        <button 
+          class="flex flex-col items-center justify-center text-center w-48 rounded-lg h-20 transform transition-all duration-200"
+          aria-label="Banque"
+        >
+            <div class="flex items-center justify-center text-xxl mt-2 text-gray-700">
+                <i class="fas fa-university text-blue-500 hover:text-white transition-colors duration-200"></i>
+                <span class="ml-2 hover:text-white">Banque</span>
+            </div>
+        </button>
+    </div>
+
+    <div class="border border-transparent hover:bg-blue-500 transition-all duration-200 mb-2">
+        <button 
+          class="flex flex-col items-center justify-center text-center w-48 rounded-lg h-20 transform transition-all duration-200"
+          aria-label="Paiement"
+        >
+            <div class="flex items-center justify-center text-xxl mt-2 text-gray-700">
+                <i class="fas fa-credit-card text-blue-500 hover:text-white transition-colors duration-200"></i>
+                <span class="ml-2 hover:text-white">Paiement</span>
+            </div>
+        </button>
+    </div>
+
+    <div class="border border-transparent hover:bg-blue-500 transition-all duration-200 mb-2">
+        <button 
+          class="flex flex-col items-center justify-center text-center w-48 rounded-lg h-20 transform transition-all duration-200"
+          aria-label="Achat Crédit"
+        >
+            <div class="flex items-center justify-center text-xxl mt-2 text-gray-700">
+                <i class="fas fa-shopping-cart text-blue-500 hover:text-white transition-colors duration-200"></i>
+                <span class="ml-2 hover:text-white">Achat Crédit</span>
+            </div>
+        </button>
+    </div>
+</div>

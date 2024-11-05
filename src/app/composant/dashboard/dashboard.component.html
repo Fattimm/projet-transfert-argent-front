@@ -1,0 +1,15 @@
+<div class="bg-yellow-400 rounded-lg w-92 relative shadow-lg p-2 ">
+    <div class="flex justify-between items-center p-1">
+        <h2 class="text-lg font-bold">Tableau de bord</h2>
+        <button (click)="toggleWallet()" class="text-gray-600 hover:text-blue-600 transition duration-200">
+            <i class="fas" [ngClass]="showWallet ? 'fa-eye-slash' : 'fa-eye' "></i>
+        </button>
+    </div>
+    <div [style.visibility]="showWallet ? 'visible' : 'hidden'" class="flex justify-between items-center mt-2">
+        <span class="text-xl font-semibold">{{ walletBalance }} F</span>
+        <span class="text-gray-600 text-sm">{{ walletLimit }} F</span>
+    </div>
+    <div [style.visibility]="showWallet ? 'visible' : 'hidden'" class="bg-gray-300 h-2 rounded mt-2">
+        <div class="bg-blue-600 h-2 rounded" [style.width.%]="(walletBalance / walletLimit) * 100"></div>
+    </div>
+</div>

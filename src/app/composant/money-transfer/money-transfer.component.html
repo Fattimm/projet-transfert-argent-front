@@ -1,0 +1,61 @@
+<!-- <div class="max-w-sm mx-auto bg-white shadow-md rounded-lg overflow-hidden flex flex-col"> -->
+<div class="max-w-[1500px] mx-auto p-2 bg-white shadow-md rounded-lg h-[850px] grid grid-cols-[250px_1fr] gap-4">
+
+
+  <!-- Header avec bouton de retour et titre -->
+  <div class="bg-blue-600 p-4 flex items-center justify-between rounded-lg">
+    <button class="text-white flex items-center" (click)="goToHome()">
+      <i class="fas fa-chevron-left mr-2"></i>
+    </button>
+    <h1 class="text-lg font-semibold text-white">Envoyer de l'Argent</h1>
+    <div></div> <!-- Pour équilibrer l'espacement -->
+  </div>
+
+  <!-- Contenu principal -->
+  <div class="p-4">
+
+    <!-- Champ pour entrer le numéro du destinataire -->
+    <div class="mb-4">
+      <label class="block text-gray-600">À</label>
+      <input type="text"
+        class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+        placeholder="Numéro du destinataire">
+    </div>
+
+    <!-- Bouton pour saisir un nouveau numéro -->
+    <button class="flex items-center w-full mb-4">
+      <div class="bg-cyan-400 p-2 rounded-full">
+        <i class="fas fa-plus text-white"></i>
+      </div>
+      <span class="ml-3 text-gray-700">Saisir un nouveau numéro</span>
+    </button>
+
+    <!-- Bouton pour scanner un QR code -->
+    <button class="flex items-center w-full mb-6">
+      <div class="border-2 border-gray-300 p-2 rounded-full">
+        <i class="fas fa-qrcode text-gray-600"></i>
+      </div>
+      <span class="ml-3 text-gray-700">Scanner pour envoyer</span>
+    </button>
+
+    <!-- Section des contacts favoris -->
+    <div class="mb-6">
+      <h2 class="text-lg font-bold text-gray-800">Contacts</h2>
+      <div class="space-y-4">
+        <div *ngFor="let contact of favorites" class="flex items-center justify-between py-2 border-b overflow-y-auto"
+          (click)="sendMoneyToContact(contact)"
+          >
+          <div class="flex items-center">
+            <div class="bg-gray-200 p-2 rounded-full">
+              <i class="fas fa-user text-gray-600"></i>
+            </div>
+            <button class="ml-3">
+              <p class="font-medium text-gray-800">{{ contact.nom }}</p>
+              <p class="text-gray-600">{{ contact.telephone }}</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
